@@ -21,21 +21,13 @@
  (println (list (clojure.string/replace nested-list #"[()]" "")))
  
 (def my-list '(a a c d a a a b b b))
-	(def new-list '())
-(loop [i 0
-             new-list '()]
-             (if (< i (count my-list))
-                 (do
-                     (if (not= (last new-list) (nth my-list i))
-							(do 
-								(conj new-list (nth my-list i))
-								(println ">>>> inner if - nth item - " (nth my-list i))
-								(println ">>> new list - " new-list)
-							)
-							(println ">>>> inner if-else")
-					 )
-              (recur (inc i) new-list))
-         new-list)
-) ;; loop
-(println " new list >>>>" new-list)
+(defn compressed-list [s e]
+  (if (= (last s) e)
+     s
+     (conj s e)))
+
+(defn comp-my-list [s]
+  (reduce compressed-list [] s))
+(println "8 - eliminate consecutive duplicates of list elements - " new-list)
+(println (comp-my-list my-list))
 ) 
