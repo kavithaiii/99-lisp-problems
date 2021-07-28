@@ -30,4 +30,9 @@
   (reduce compressed-list [] s))
 (println "8 - eliminate consecutive duplicates of list elements - " new-list)
 (println (comp-my-list my-list))
+  
+(println "14 - duplicate the elements of the list (a c c d)")
+(def my-list '(a c c d))
+(def duplicate-list (reduce #(count (map println (repeat %1 %2))) 2 my-list))
+
 ) 
