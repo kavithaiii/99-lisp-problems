@@ -33,14 +33,14 @@ Example:
 * (my-flatten '(a (b (c d) e)))
 (A B C D E)
 
-Hint: Use the predefined functions list and append.
-
 ##### P08 (**) Eliminate consecutive duplicates of list elements.
 If a list contains repeated elements they should be replaced with a single copy of the element. The order of the elements should not be changed.
 
 Example:
 * (compress '(a a a a b c c a a d e e e e))
 (A B C A D E)
+
+> note P09 - P13 pending on logic
 
 ##### P09 (**) Pack consecutive duplicates of list elements into sublists.
 If a list contains repeated elements they should be placed in separate sublists.
@@ -56,3 +56,11 @@ Use the result of problem P09 to implement the so-called run-length encoding dat
 Example:
 * (encode '(a a a a b c c a a d e e e e))
 ((4 A) (1 B) (2 C) (2 A) (1 D)(4 E))
+
+
+##### P14 (*) Duplicate the elements of a list.
+
+Example:
+* (dupli '(a b c c d))
+(A A B B C C C C D D)
+Hint: Use the predefined functions list and append.
